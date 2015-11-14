@@ -9,11 +9,9 @@ var options = {
 }
 
 var pomegranate = require('pomegranate');
-var Errors = require('./utilities/Errors')
 
 pomegranate
   .init(options)
-  .addDependency('Errors', Errors)
   .useGlobal(function(app){
     return app.all('*?', function(req, res, next){
       res.render('FrontPage')
